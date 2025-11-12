@@ -1,0 +1,18 @@
+[gd_scene load_steps=3 format=3 uid="uid://e4u4x2tuksgl"]
+
+[ext_resource type="Script" uid="uid://dya3116563340" path="res://scripts/autoload/AudioManager.gd" id="1_kgib7"]
+[ext_resource type="AudioStream" uid="uid://clw8ysuwgaoij" path="res://_PLACEHOLDER/Audio/Song.mp3" id="2_ed3sa"]
+
+[node name="AudioManager" type="Node"]
+script = ExtResource("1_kgib7")
+
+[node name="Music" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="metronome" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("2_ed3sa")
+
+[node name="SFX" type="Node" parent="."]
+unique_name_in_owner = true
+
+[node name="click" type="AudioStreamPlayer" parent="SFX"]
