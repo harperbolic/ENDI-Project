@@ -1,0 +1,38 @@
+[gd_scene load_steps=5 format=3 uid="uid://uqhksvy6d84m"]
+
+[ext_resource type="Texture2D" uid="uid://dexcdnwt6b0ef" path="res://assets/tileset/portaoTori.png" id="1_hf647"]
+[ext_resource type="Script" uid="uid://buhknrlqvw17i" path="res://scripts/game_element/exit.gd" id="1_xn7vt"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_xn7vt"]
+size = Vector2(9, 20)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_hf647"]
+size = Vector2(20, 19)
+
+[node name="Exit" type="Node2D"]
+script = ExtResource("1_xn7vt")
+
+[node name="Sprite" type="Sprite2D" parent="."]
+position = Vector2(0, -8)
+texture = ExtResource("1_hf647")
+
+[node name="Collision" type="Area2D" parent="."]
+position = Vector2(0, -8)
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Collision"]
+position = Vector2(-15, 1)
+shape = SubResource("RectangleShape2D_xn7vt")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Collision"]
+position = Vector2(16.5, 1)
+shape = SubResource("RectangleShape2D_xn7vt")
+
+[node name="Exit" type="Area2D" parent="."]
+position = Vector2(0, -8)
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Exit"]
+position = Vector2(0, 1.5)
+shape = SubResource("RectangleShape2D_hf647")
+
+[connection signal="body_entered" from="Exit" to="." method="_on_exit_body_entered"]

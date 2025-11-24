@@ -43,6 +43,8 @@ func execute_action() -> void:
 	tick_ended = true
 
 func _move(dir: Vector2) -> void:
+	Audio.play_sfx("walk")
+	
 	global_position += dir * tile_size
 	$Sprite2D.global_position -= dir * tile_size
 	
@@ -52,3 +54,8 @@ func _move(dir: Vector2) -> void:
 	sprite_node_pos_tween = create_tween()
 	sprite_node_pos_tween.set_process_mode(Tween.TWEEN_PROCESS_PHYSICS)
 	sprite_node_pos_tween.tween_property($Sprite2D, "global_position", global_position, 0.1).set_trans(Tween.TRANS_SINE)
+
+func damage() -> void:
+	Def.lifes -= 1
+	Audio.play_sfx("fail")
+	Scene.reload_room()

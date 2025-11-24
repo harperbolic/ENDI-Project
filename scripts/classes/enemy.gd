@@ -1,7 +1,13 @@
 extends Node
 class_name Enemy
 
-var tick_done = true
+var tick_counter = 0
+@onready var tick_done = true
+
+@export var bullets_direction: Vector2
+@export var bullet_delay = 2
+
+@onready var sprite: AnimatedSprite2D = $Sprite2D
 
 const bullet : Dictionary = {
 	"normal" : preload("res://Entities/Bullets/NormalBullet.tscn"),
@@ -11,22 +17,23 @@ const bullet : Dictionary = {
 	"heavy" : ""
 }
 
-@export var HP := 2
-
-func damage(attack_damage : int):
-	HP -= attack_damage
-	
-	if HP == 0:
-		queue_free()
+func _ready() -> void:
+	sprite.play("default")
+	Audio.tick.connect(handler)
 
 func attack(weapon, direction : Vector2):
-	tick_done = false
 	var node = bullet.get(weapon).instantiate()
-#	node.rotation = direction
+	node.direction = direction
 	add_child(node)
-	await Audio.tick
-	tick_done = true
+	
+	Audio.play_sfx("spellcast")
+	sprite.play("shoot")
 
-func _process(_delta: float) -> void:
-	if tick_done:
-		attack("normal", Vector2(1, 0))
+func handler():
+	tick_counter += 1
+	if tick_counter < bullet_delay:
+		return
+	attack("normal", bullets_direction)
+	tick_counter = 0
+	await sprite.animation_looped
+	sprite.play("default")

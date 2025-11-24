@@ -1,7 +1,7 @@
 [gd_scene load_steps=4 format=3 uid="uid://1rkpv24p1qy1"]
 
-[ext_resource type="Texture2D" uid="uid://bl25k2dp361lv" path="res://assets/bullet.png" id="1_4sj3d"]
 [ext_resource type="Script" uid="uid://bocx5oqp3ybt4" path="res://scripts/bullets/NormalBullet.gd" id="1_kgjwf"]
+[ext_resource type="Texture2D" uid="uid://2ri8vk640dsa" path="res://assets/projectile/fireToro.png" id="2_n8ycc"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_kgjwf"]
 size = Vector2(4, 4)
@@ -9,11 +9,10 @@ size = Vector2(4, 4)
 [node name="NormalBullet" type="Area2D"]
 collision_layer = 0
 script = ExtResource("1_kgjwf")
-direction = Vector2(-1, 0)
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture_filter = 1
-texture = ExtResource("1_4sj3d")
+texture = ExtResource("2_n8ycc")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("RectangleShape2D_kgjwf")

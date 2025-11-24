@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bl25k2dp361lv"
-path="res://.godot/imported/bullet.png-c68d06721d4ad8b0013707b0a51654af.ctex"
+uid="uid://cbrp737xjprt6"
+path="res://.godot/imported/toroCharge01.png-3b13f9267fbcc91ff07351be5e94c9a7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/bullet.png"
-dest_files=["res://.godot/imported/bullet.png-c68d06721d4ad8b0013707b0a51654af.ctex"]
+source_file="res://assets/Toro/toroCharge01.png"
+dest_files=["res://.godot/imported/toroCharge01.png-3b13f9267fbcc91ff07351be5e94c9a7.ctex"]
 
 [params]
 

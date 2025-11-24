@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://bsleon1loy5f1"
-path="res://.godot/imported/heart_empty.png-b51866b7c457f7a8f673b8790fbe5c88.ctex"
+uid="uid://c7b06tpldsl3"
+path="res://.godot/imported/toroSpawn05.png-1886d564dae124866bcb488579d6f57c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/heart_empty.png"
-dest_files=["res://.godot/imported/heart_empty.png-b51866b7c457f7a8f673b8790fbe5c88.ctex"]
+source_file="res://assets/Toro/toroSpawn05.png"
+dest_files=["res://.godot/imported/toroSpawn05.png-1886d564dae124866bcb488579d6f57c.ctex"]
 
 [params]
 
