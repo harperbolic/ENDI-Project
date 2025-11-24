@@ -7,9 +7,20 @@ var scenes = {
 	"testing" : "res://scenes/game_rooms/ROOM_TEMPLATE.tscn",
 }
 
-var rooms = {}
+var room_easy = {
+	"room_1" : "res://scenes/game_rooms/level1j.tscn",
+	"room_2" :"res://scenes/game_rooms/ROOM_TEMPLATE.tscn"
+}
 
-var level = ["testing", "testing", "testing"]
+var room_medium = {
+	
+}
+
+var room_hard = {
+	
+}
+
+var level = ["testing", "testing", "testing", "testing", "testing"]
 
 @onready var scene = load(scenes["testing"]).instantiate()
 @onready var old_scene = scene
@@ -38,4 +49,10 @@ func reload_room():
 	load_scene(level[current_room])
 
 func gen_level():
-	pass
+	for i in level:
+		if i < 3:
+			level[i] = room_easy.get(room_easy.keys().pick_random())
+		if i < 5:
+			level[i] = room_medium.get(room_medium.keys().pick_random())
+		else:
+			level[i] = room_hard.get(room_hard.keys().pick_random())

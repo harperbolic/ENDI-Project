@@ -1,0 +1,403 @@
+[gd_scene load_steps=5 format=3 uid="uid://djob5s8do016c"]
+
+[ext_resource type="Script" uid="uid://yrw73ywsgo2k" path="res://scripts/UI/main_menu.gd" id="1_rtw2f"]
+
+[sub_resource type="Animation" id="Animation_wu84c"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(0, 0, 0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [false]
+}
+
+[sub_resource type="Animation" id="Animation_bqqt6"]
+resource_name = "screen_fade"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:color")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 1),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(0, 0, 0, 0), Color(0, 0, 0, 1)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath(".:visible")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.01),
+"transitions": PackedFloat32Array(1, 1),
+"update": 1,
+"values": [false, true]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8ln24"]
+_data = {
+&"RESET": SubResource("Animation_wu84c"),
+&"screen_fade": SubResource("Animation_bqqt6")
+}
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_rtw2f")
+
+[node name="Panel2" type="TextureRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_top = -9.0
+offset_right = 329.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+expand_mode = 3
+stretch_mode = 4
+
+[node name="Poly" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 953.0
+offset_top = 701.0
+offset_right = 993.0
+offset_bottom = 741.0
+
+[node name="Polygon2D" type="Polygon2D" parent="Poly"]
+position = Vector2(-989, -756)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(977, 836, 1034, 824, 1099, 839, 1154, 834, 1159, 859, 1155, 877, 1073, 882, 1014, 885, 973, 874)
+
+[node name="Polygon2D2" type="Polygon2D" parent="Poly"]
+position = Vector2(-783, -753)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(977, 836, 1034, 824, 1098, 834, 1137, 834, 1140, 855, 1129, 872, 1073, 882, 1016, 880, 980, 875)
+
+[node name="Polygon2D3" type="Polygon2D" parent="Poly"]
+position = Vector2(-604, -753)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(977, 836, 1034, 824, 1064, 830, 1119, 835, 1129, 872, 1016, 880, 980, 875)
+
+[node name="Polygon2D4" type="Polygon2D" parent="Poly"]
+position = Vector2(-433, -754)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(985, 841, 1034, 824, 1064, 830, 1119, 835, 1129, 872, 1096, 879, 1018, 873, 1002, 881, 980, 862)
+
+[node name="Polygon2D5" type="Polygon2D" parent="Poly"]
+position = Vector2(-270, -756)
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(998, 837, 1064, 830, 1119, 835, 1153, 842, 1164, 857, 1151, 875, 1131, 873, 1086, 873, 1043, 879, 998, 873, 980, 862)
+
+[node name="Buttons" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -6.0
+offset_top = 107.0
+offset_right = 867.0
+offset_bottom = 412.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 55
+
+[node name="StartGame" type="Button" parent="Buttons"]
+layout_mode = 2
+focus_mode = 3
+theme_override_font_sizes/font_size = 30
+text = "New Game"
+
+[node name="StartGame2" type="Button" parent="Buttons"]
+layout_mode = 2
+focus_mode = 3
+theme_override_font_sizes/font_size = 30
+disabled = true
+text = "Continue"
+
+[node name="Options" type="Button" parent="Buttons"]
+layout_mode = 2
+focus_mode = 3
+theme_override_font_sizes/font_size = 30
+text = "Options"
+
+[node name="Credits" type="Button" parent="Buttons"]
+layout_mode = 2
+focus_mode = 3
+theme_override_font_sizes/font_size = 30
+text = "Credits"
+
+[node name="QuitGame" type="Button" parent="Buttons"]
+layout_mode = 2
+focus_mode = 3
+theme_override_font_sizes/font_size = 30
+text = "Quit Game"
+
+[node name="Version" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -180.0
+offset_top = -62.0
+grow_horizontal = 0
+grow_vertical = 0
+
+[node name="Label2" type="Label" parent="Version"]
+layout_mode = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 20
+text = "Jam version 1.0"
+horizontal_alignment = 1
+
+[node name="GameTitle" type="Label" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -197.0
+offset_top = -320.0
+offset_right = 197.0
+offset_bottom = -179.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_font_sizes/font_size = 50
+text = "WALLFLOWER"
+horizontal_alignment = 1
+
+[node name="GameLogo" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 953.0
+offset_top = 229.0
+offset_right = 1829.0
+offset_bottom = 674.85376
+expand_mode = 5
+stretch_mode = 4
+
+[node name="Options" type="Control" parent="."]
+custom_minimum_size = Vector2(800, 500)
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -46.0
+offset_top = -216.0
+offset_right = 754.0
+offset_bottom = 284.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Polygon2D" type="Polygon2D" parent="Options"]
+color = Color(0, 0, 0, 1)
+polygon = PackedVector2Array(51, -4, 373, -38, 635, -23, 760, 19, 749, 485, 593, 519, 396, 510, 109, 495, 109, 404)
+
+[node name="Label" type="Label" parent="Options"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -31.0
+offset_right = 31.0
+offset_bottom = 23.0
+grow_horizontal = 2
+theme_override_font_sizes/font_size = 32
+text = "Options"
+
+[node name="Back" type="Control" parent="Options"]
+anchors_preset = 0
+offset_left = 359.0
+offset_top = 428.0
+offset_right = 399.0
+offset_bottom = 468.0
+
+[node name="Polygon2D2" type="Polygon2D" parent="Options/Back"]
+color = Color(0.712692, 2.9359758e-06, 5.7756904e-07, 1)
+polygon = PackedVector2Array(-13, 41, 18, 2, 58, 14, 87, 4, 93, 42, 48, 57)
+
+[node name="Polygon2D" type="Polygon2D" parent="Options/Back"]
+polygon = PackedVector2Array(-21, 26, -2, 7, 67, 2, 89, 13, 85, 52, 21, 55)
+
+[node name="Back" type="Button" parent="Options/Back"]
+layout_mode = 1
+anchors_preset = 7
+anchor_left = 0.5
+anchor_top = 1.0
+anchor_right = 0.5
+anchor_bottom = 1.0
+offset_left = -20.0
+offset_top = -40.0
+offset_right = 62.0
+offset_bottom = 13.0
+grow_horizontal = 2
+grow_vertical = 0
+focus_mode = 3
+theme_override_colors/font_color = Color(0, 0, 0, 1)
+theme_override_colors/font_hover_color = Color(0.18359026, 0.18359041, 0.18359092, 1)
+theme_override_font_sizes/font_size = 32
+text = "Back
+"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Options"]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -154.0
+offset_top = 85.0
+offset_right = 154.0
+offset_bottom = 297.5
+grow_horizontal = 2
+theme_override_constants/separation = 15
+
+[node name="HBoxContainer" type="HBoxContainer" parent="Options/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 8
+theme_override_constants/separation = 40
+
+[node name="sfx" type="Label" parent="Options/VBoxContainer/HBoxContainer"]
+layout_mode = 2
+focus_mode = 3
+theme_override_font_sizes/font_size = 20
+text = "Sound Effects"
+
+[node name="SFXControl" type="HSlider" parent="Options/VBoxContainer/HBoxContainer"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 3
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="HBoxContainer2" type="HBoxContainer" parent="Options/VBoxContainer"]
+layout_mode = 2
+size_flags_horizontal = 8
+size_flags_vertical = 8
+theme_override_constants/separation = 40
+
+[node name="mus" type="Label" parent="Options/VBoxContainer/HBoxContainer2"]
+layout_mode = 2
+focus_mode = 3
+theme_override_font_sizes/font_size = 20
+text = "Music"
+
+[node name="MusicControl" type="HSlider" parent="Options/VBoxContainer/HBoxContainer2"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 3
+min_value = 0.01
+max_value = 1.0
+step = 0.01
+value = 1.0
+
+[node name="HBoxContainer3" type="HBoxContainer" parent="Options/VBoxContainer"]
+visible = false
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 40
+alignment = 2
+
+[node name="language" type="Label" parent="Options/VBoxContainer/HBoxContainer3"]
+layout_mode = 2
+focus_mode = 3
+theme_override_font_sizes/font_size = 20
+text = "Language"
+
+[node name="OptionButton" type="OptionButton" parent="Options/VBoxContainer/HBoxContainer3"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+focus_mode = 3
+alignment = 1
+selected = 0
+item_count = 2
+popup/item_0/text = "English"
+popup/item_0/id = 0
+popup/item_1/text = "Português"
+popup/item_1/id = 1
+
+[node name="HBoxContainer4" type="HBoxContainer" parent="Options/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 8
+theme_override_constants/separation = 40
+alignment = 2
+
+[node name="fullscreen" type="Label" parent="Options/VBoxContainer/HBoxContainer4"]
+layout_mode = 2
+focus_mode = 3
+theme_override_font_sizes/font_size = 20
+text = "Fullscreen"
+
+[node name="FullscreenToggle" type="CheckButton" parent="Options/VBoxContainer/HBoxContainer4"]
+custom_minimum_size = Vector2(400, 0)
+layout_mode = 2
+focus_mode = 3
+theme_override_font_sizes/font_size = 20
+
+[node name="ColorRect" type="ColorRect" parent="."]
+visible = false
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 0)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+root_node = NodePath("../ColorRect")
+libraries = {
+&"": SubResource("AnimationLibrary_8ln24")
+}
+
+[connection signal="pressed" from="Buttons/StartGame" to="." method="_on_start_game_pressed"]
+[connection signal="pressed" from="Buttons/StartGame2" to="." method="_on_start_game_2_pressed"]
+[connection signal="pressed" from="Buttons/Options" to="." method="_on_options_pressed"]
+[connection signal="pressed" from="Buttons/Credits" to="." method="_on_credits_pressed"]
+[connection signal="pressed" from="Buttons/QuitGame" to="." method="_on_quit_game_pressed"]
+[connection signal="pressed" from="Options/Back/Back" to="." method="_on_back_pressed"]
+[connection signal="value_changed" from="Options/VBoxContainer/HBoxContainer/SFXControl" to="." method="_on_sfx_control_value_changed"]
+[connection signal="value_changed" from="Options/VBoxContainer/HBoxContainer2/MusicControl" to="." method="_on_music_control_value_changed"]
+[connection signal="item_selected" from="Options/VBoxContainer/HBoxContainer3/OptionButton" to="." method="_on_option_button_item_selected"]
+[connection signal="toggled" from="Options/VBoxContainer/HBoxContainer4/FullscreenToggle" to="." method="_on_fullscreen_toggle_toggled"]

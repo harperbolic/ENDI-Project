@@ -20,10 +20,11 @@ func handler():
 	move()
 
 func move():
-	$CollisionShape2D.disabled = true
+	set_sprite_rotation()
 	move_anim()
 
 func move_anim():
+	$CollisionShape2D.disabled = true
 	global_position += direction * tile_size
 	$Sprite2D.global_position -= direction * tile_size
 	
@@ -35,3 +36,14 @@ func move_anim():
 	sprite_node_pos_tween.tween_property($Sprite2D, "global_position", global_position, 0.1).set_trans(Tween.TRANS_SINE)
 	await sprite_node_pos_tween.finished
 	$CollisionShape2D.disabled = false
+
+func set_sprite_rotation():
+	match direction:
+		Vector2(0, -1):
+			$Sprite2D.rotation = deg_to_rad(90)
+		Vector2(0, 1):
+			$Sprite2D.rotation = deg_to_rad(-90)
+		Vector2(-1, 0):
+			$Sprite2D.rotation = deg_to_rad(0)
+		Vector2(1, 0):
+			$Sprite2D.rotation = deg_to_rad(180)

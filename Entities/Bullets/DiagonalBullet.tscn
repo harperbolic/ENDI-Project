@@ -1,0 +1,20 @@
+[gd_scene load_steps=4 format=3 uid="uid://ddlkybg4ckqi1"]
+
+[ext_resource type="Script" uid="uid://bocx5oqp3ybt4" path="res://scripts/bullets/NormalBullet.gd" id="1_etebi"]
+[ext_resource type="Texture2D" uid="uid://hnrpkjw8m136" path="res://assets/bullet/fireLanternaB.png" id="2_etebi"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kgjwf"]
+size = Vector2(4, 4)
+
+[node name="NormalBullet" type="Area2D"]
+collision_layer = 2
+script = ExtResource("1_etebi")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("2_etebi")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_kgjwf")
+
+[connection signal="body_entered" from="." to="." method="_on_hitbox_body_entered"]

@@ -11,7 +11,7 @@ var tick_counter = 0
 
 const bullet : Dictionary = {
 	"normal" : preload("res://Entities/Bullets/NormalBullet.tscn"),
-	"diagonal" : "",
+	"diagonal" : preload("res://Entities/Bullets/DiagonalBullet.tscn"),
 	"bounce" : "",
 	"zigzag" : "",
 	"heavy" : ""
