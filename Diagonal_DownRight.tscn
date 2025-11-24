@@ -1,0 +1,82 @@
+[gd_scene load_steps=13 format=3 uid="uid://dw517qb4uc3ol"]
+
+[ext_resource type="Script" uid="uid://cjsj0mkna461c" path="res://scripts/classes/diagonal_enemy.gd" id="1_ujn58"]
+[ext_resource type="Texture2D" uid="uid://donft134enh5q" path="res://assets/Lanterna/lanternaIdle00.png" id="2_ujn58"]
+[ext_resource type="Texture2D" uid="uid://cr8c7vmrq7xaf" path="res://assets/Lanterna/lanternaIdle01.png" id="3_mnudt"]
+[ext_resource type="Texture2D" uid="uid://bb7qgvx12dovw" path="res://assets/Lanterna/lanternaIdle02.png" id="4_tub0x"]
+[ext_resource type="Texture2D" uid="uid://dhec3amxolwsx" path="res://assets/Lanterna/lanternaIdle03.png" id="5_pxn78"]
+[ext_resource type="Texture2D" uid="uid://deuvf4dyoy3xx" path="res://assets/Lanterna/lanternaAttack01.png" id="6_tms21"]
+[ext_resource type="Texture2D" uid="uid://ct8mg47b8vx4p" path="res://assets/Lanterna/lanternaAttack02.png" id="7_ftyos"]
+[ext_resource type="Texture2D" uid="uid://ddi1jxwmxpbid" path="res://assets/Lanterna/lanternaAttack03.png" id="8_k4hdk"]
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_5bqsa"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("2_ujn58")
+}, {
+"duration": 1.0,
+"texture": ExtResource("3_mnudt")
+}, {
+"duration": 1.0,
+"texture": ExtResource("4_tub0x")
+}, {
+"duration": 1.0,
+"texture": ExtResource("5_pxn78")
+}],
+"loop": true,
+"name": &"default",
+"speed": 5.0
+}, {
+"frames": [{
+"duration": 1.0,
+"texture": ExtResource("6_tms21")
+}, {
+"duration": 1.0,
+"texture": ExtResource("7_ftyos")
+}, {
+"duration": 1.0,
+"texture": ExtResource("8_k4hdk")
+}],
+"loop": true,
+"name": &"shoot",
+"speed": 5.0
+}]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3v47s"]
+size = Vector2(13, 13)
+
+[sub_resource type="Gradient" id="Gradient_ujn58"]
+offsets = PackedFloat32Array(0, 0.68666667, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.04666668, 0.04666668, 0.04666668, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ujn58"]
+gradient = SubResource("Gradient_ujn58")
+fill = 1
+fill_from = Vector2(0.5140187, 0.4813084)
+fill_to = Vector2(1, 0.5233645)
+
+[node name="BasicEnemy" type="Area2D"]
+script = ExtResource("1_ujn58")
+bullets_direction = Vector2(1, 1)
+bullet_delay = 3
+
+[node name="Sprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_5bqsa")
+animation = &"shoot"
+frame_progress = 0.120305896
+speed_scale = 2.0
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_3v47s")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+z_as_relative = false
+color = Color(0.5621, 0.05839999, 0.73, 1)
+range_z_min = -16
+range_z_max = 16
+texture = SubResource("GradientTexture2D_ujn58")
+height = 60.0

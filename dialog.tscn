@@ -1,0 +1,10 @@
+[gd_scene load_steps=2 format=3 uid="uid://bgc6dtrpgdxiy"]
+
+[ext_resource type="PackedScene" uid="uid://dl6irhqvu4gqn" path="res://scenes/game_elements/textbox.tscn" id="1_i4bwb"]
+
+[node name="Dialog" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+
+[node name="Textbox" parent="." instance=ExtResource("1_i4bwb")]
+layout_mode = 0

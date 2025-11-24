@@ -1,0 +1,18 @@
+[gd_scene load_steps=4 format=3 uid="uid://cx2mt6ra70j0h"]
+
+[ext_resource type="Script" uid="uid://b1hm1a0n5smlo" path="res://scripts/classes/enemy.gd" id="1_3v47s"]
+[ext_resource type="Texture2D" uid="uid://bw0c6fa045buw" path="res://assets/enemy.png" id="1_i08g3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_3v47s"]
+size = Vector2(13, 13)
+
+[node name="BasicEnemy" type="Area2D"]
+script = ExtResource("1_3v47s")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture_filter = 1
+texture = ExtResource("1_i08g3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0.5, -0.5)
+shape = SubResource("RectangleShape2D_3v47s")

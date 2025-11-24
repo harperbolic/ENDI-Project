@@ -1,0 +1,23 @@
+[gd_scene load_steps=3 format=3 uid="uid://cje61hqcbfoiy"]
+
+[ext_resource type="Texture2D" uid="uid://du3hi665iapth" path="res://assets/heart.png" id="1_5b0bo"]
+[ext_resource type="Script" uid="uid://b1vh7jif3jv21" path="res://scripts/game_element/level_ui.gd" id="1_6o5m5"]
+
+[node name="UI" type="Control"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("1_6o5m5")
+
+[node name="TextureProgressBar" type="TextureProgressBar" parent="."]
+texture_repeat = 2
+layout_mode = 0
+offset_left = 288.0
+offset_top = 15.0
+offset_right = 328.0
+offset_bottom = 55.0
+max_value = 5.0
+value = 5.0
+fill_mode = 2
+texture_progress = ExtResource("1_5b0bo")
