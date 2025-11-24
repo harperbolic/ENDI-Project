@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://dw517qb4uc3ol"]
+[gd_scene load_steps=13 format=3 uid="uid://dw517qb4uc3ol"]
 
 [ext_resource type="Script" uid="uid://cjsj0mkna461c" path="res://scripts/classes/diagonal_enemy.gd" id="1_ujn58"]
 [ext_resource type="Texture2D" uid="uid://donft134enh5q" path="res://assets/Lanterna/lanternaIdle00.png" id="2_ujn58"]
@@ -46,6 +46,16 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3v47s"]
 size = Vector2(13, 13)
 
+[sub_resource type="Gradient" id="Gradient_ujn58"]
+offsets = PackedFloat32Array(0, 0.68666667, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.04666668, 0.04666668, 0.04666668, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_ujn58"]
+gradient = SubResource("Gradient_ujn58")
+fill = 1
+fill_from = Vector2(0.5140187, 0.4813084)
+fill_to = Vector2(1, 0.5233645)
+
 [node name="BasicEnemy" type="Area2D"]
 script = ExtResource("1_ujn58")
 bullets_direction = Vector2(1, 1)
@@ -57,7 +67,16 @@ sprite_frames = SubResource("SpriteFrames_5bqsa")
 animation = &"shoot"
 frame_progress = 0.120305896
 speed_scale = 2.0
+flip_h = true
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, -0.5)
 shape = SubResource("RectangleShape2D_3v47s")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+z_as_relative = false
+color = Color(0.5621, 0.05839999, 0.73, 1)
+range_z_min = -16
+range_z_max = 16
+texture = SubResource("GradientTexture2D_ujn58")
+height = 60.0

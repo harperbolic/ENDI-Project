@@ -1,22 +1,21 @@
-[gd_scene load_steps=22 format=4 uid="uid://cx4fxllyrjo2"]
+[gd_scene load_steps=21 format=4 uid="uid://dwrwjf0fnp0pg"]
 
-[ext_resource type="Texture2D" uid="uid://d1h7a0whm2qj7" path="res://assets/tileset/sheetpekochan.png" id="1_gee40"]
-[ext_resource type="PackedScene" uid="uid://cx2mt6ra70j0h" path="res://Entities/Lampada_Reta/BasicEnemyLeft.tscn" id="2_ndvjo"]
-[ext_resource type="PackedScene" uid="uid://uqhksvy6d84m" path="res://scenes/game_elements/Exit.tscn" id="3_ornwb"]
-[ext_resource type="PackedScene" uid="uid://dtn2vxx6gpggr" path="res://player.tscn" id="4_duf5k"]
-[ext_resource type="PackedScene" uid="uid://b17ar8l4tlsmu" path="res://Entities/Lampada_Diagonal/Diagonal_DownLeft.tscn" id="4_uulju"]
-[ext_resource type="PackedScene" uid="uid://dw517qb4uc3ol" path="res://Entities/Lampada_Diagonal/Diagonal_DownRight.tscn" id="5_a6nwj"]
-[ext_resource type="Script" uid="uid://baooxibc3vp5r" path="res://scripts/game_element/arena_border.gd" id="5_ndvjo"]
-[ext_resource type="PackedScene" uid="uid://cv0tsnwy7p0mh" path="res://Entities/Lampada_Diagonal/Diagonal_TopLeft.tscn" id="6_yswhu"]
-[ext_resource type="PackedScene" uid="uid://lgi6s46noq87" path="res://Entities/Lampada_Reta/BasicEnemyDown.tscn" id="7_1tefh"]
-[ext_resource type="PackedScene" uid="uid://c1run63r8h6dv" path="res://Entities/Lampada_Diagonal/Diagonal_TopRight.tscn" id="7_upe3p"]
-[ext_resource type="PackedScene" uid="uid://6c7wewc0ga25" path="res://Entities/Bird.tscn" id="7_w8q1h"]
-[ext_resource type="PackedScene" uid="uid://cr7tr7kihw6ww" path="res://Entities/Lampada_Reta/BasicEnemyRight.tscn" id="9_w8q1h"]
-[ext_resource type="PackedScene" uid="uid://cqhdb4e1t4dr7" path="res://Entities/Lampada_Reta/BasicEnemyUp.tscn" id="10_ogmd0"]
-[ext_resource type="PackedScene" uid="uid://cje61hqcbfoiy" path="res://scenes/game_elements/LevelUI.tscn" id="14_w8q1h"]
+[ext_resource type="Texture2D" uid="uid://d1h7a0whm2qj7" path="res://assets/tileset/sheetpekochan.png" id="1_cohye"]
+[ext_resource type="PackedScene" uid="uid://uqhksvy6d84m" path="res://scenes/game_elements/Exit.tscn" id="2_huw5f"]
+[ext_resource type="PackedScene" uid="uid://dtn2vxx6gpggr" path="res://player.tscn" id="3_feivp"]
+[ext_resource type="PackedScene" uid="uid://dw517qb4uc3ol" path="res://Entities/Lampada_Diagonal/Diagonal_DownRight.tscn" id="4_rrfgx"]
+[ext_resource type="PackedScene" uid="uid://cv0tsnwy7p0mh" path="res://Entities/Lampada_Diagonal/Diagonal_TopLeft.tscn" id="5_xotsh"]
+[ext_resource type="PackedScene" uid="uid://c1run63r8h6dv" path="res://Entities/Lampada_Diagonal/Diagonal_TopRight.tscn" id="6_aiicy"]
+[ext_resource type="PackedScene" uid="uid://6c7wewc0ga25" path="res://Entities/Bird.tscn" id="7_7ioe8"]
+[ext_resource type="PackedScene" uid="uid://lgi6s46noq87" path="res://Entities/Lampada_Reta/BasicEnemyDown.tscn" id="8_bo4hr"]
+[ext_resource type="PackedScene" uid="uid://cx2mt6ra70j0h" path="res://Entities/Lampada_Reta/BasicEnemyLeft.tscn" id="9_tf248"]
+[ext_resource type="PackedScene" uid="uid://cr7tr7kihw6ww" path="res://Entities/Lampada_Reta/BasicEnemyRight.tscn" id="10_tkxl3"]
+[ext_resource type="PackedScene" uid="uid://cqhdb4e1t4dr7" path="res://Entities/Lampada_Reta/BasicEnemyUp.tscn" id="11_t1k10"]
+[ext_resource type="PackedScene" uid="uid://b17ar8l4tlsmu" path="res://Entities/Lampada_Diagonal/Diagonal_DownLeft.tscn" id="12_bh2vr"]
+[ext_resource type="Script" uid="uid://baooxibc3vp5r" path="res://scripts/game_element/arena_border.gd" id="13_qbe46"]
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_gxwvw"]
-texture = ExtResource("1_gee40")
+texture = ExtResource("1_cohye")
 0:0/0 = 0
 1:0/0 = 0
 1:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-8, -8, 8, -8, 8, 8, -8, 8)
@@ -43,20 +42,20 @@ texture = ExtResource("1_gee40")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_p7s2n"]
 resource_name = "Elementos"
-scenes/2/scene = ExtResource("3_ornwb")
-scenes/3/scene = ExtResource("4_duf5k")
+scenes/2/scene = ExtResource("2_huw5f")
+scenes/3/scene = ExtResource("3_feivp")
 
 [sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_1tefh"]
 resource_name = "Inimigos"
-scenes/5/scene = ExtResource("7_1tefh")
-scenes/6/scene = ExtResource("2_ndvjo")
-scenes/7/scene = ExtResource("9_w8q1h")
-scenes/8/scene = ExtResource("10_ogmd0")
-scenes/9/scene = ExtResource("4_uulju")
-scenes/10/scene = ExtResource("5_a6nwj")
-scenes/11/scene = ExtResource("6_yswhu")
-scenes/12/scene = ExtResource("7_upe3p")
-scenes/13/scene = ExtResource("7_w8q1h")
+scenes/5/scene = ExtResource("8_bo4hr")
+scenes/6/scene = ExtResource("9_tf248")
+scenes/7/scene = ExtResource("10_tkxl3")
+scenes/8/scene = ExtResource("11_t1k10")
+scenes/9/scene = ExtResource("12_bh2vr")
+scenes/10/scene = ExtResource("4_rrfgx")
+scenes/11/scene = ExtResource("5_xotsh")
+scenes/12/scene = ExtResource("6_aiicy")
+scenes/13/scene = ExtResource("7_7ioe8")
 
 [sub_resource type="TileSet" id="TileSet_blxa6"]
 physics_layer_0/collision_layer = 1
@@ -73,7 +72,7 @@ size = Vector2(195, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lt5o6"]
 size = Vector2(70, 20)
 
-[node name="Node2D" type="Node"]
+[node name="Node2D" type="Node2D"]
 
 [node name="Tileset" type="Node2D" parent="."]
 
@@ -95,7 +94,7 @@ collision_enabled = false
 [node name="Area2D" type="Area2D" parent="Tileset/Details"]
 collision_layer = 3
 collision_mask = 3
-script = ExtResource("5_ndvjo")
+script = ExtResource("13_qbe46")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Tileset/Details/Area2D"]
 position = Vector2(52, 97)
@@ -120,7 +119,5 @@ shape = SubResource("RectangleShape2D_lt5o6")
 [node name="CollisionShape2D3" type="CollisionShape2D" parent="Tileset/Details/Area2D"]
 position = Vector2(213, 15)
 shape = SubResource("RectangleShape2D_lt5o6")
-
-[node name="UI" parent="." instance=ExtResource("14_w8q1h")]
 
 [connection signal="area_entered" from="Tileset/Details/Area2D" to="Tileset/Details/Area2D" method="_on_area_entered"]

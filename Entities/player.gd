@@ -56,6 +56,6 @@ func _move(dir: Vector2) -> void:
 	sprite_node_pos_tween.tween_property($Sprite2D, "global_position", global_position, 0.1).set_trans(Tween.TRANS_SINE)
 
 func damage() -> void:
-	Def.lifes -= 1
+	Def.take_damage()
 	Audio.play_sfx("fail")
 	Scene.reload_room()

@@ -5,6 +5,9 @@ var SM : String = "Scene Manager: "
 var scenes = {
 	"main_menu" : "res://scenes/main_menu.tscn",
 	"testing" : "res://scenes/game_rooms/ROOM_TEMPLATE.tscn",
+	"room_1" : "res://scenes/game_rooms/level1j.tscn",
+	"room_2" :"res://scenes/game_rooms/level_2.tscn",
+	"game_over" : "res://scenes/main_menu.tscn",
 }
 
 var room_easy = {

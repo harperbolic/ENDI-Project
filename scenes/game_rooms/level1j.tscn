@@ -1,4 +1,4 @@
-[gd_scene load_steps=16 format=4 uid="uid://35j8fim4byg0"]
+[gd_scene load_steps=12 format=4 uid="uid://dl5hc8eim0cwf"]
 
 [ext_resource type="Texture2D" uid="uid://d1h7a0whm2qj7" path="res://assets/tileset/sheetpekochan.png" id="1_gee40"]
 [ext_resource type="PackedScene" uid="uid://cx2mt6ra70j0h" path="res://Entities/Lampada_Reta/BasicEnemyLeft.tscn" id="2_ndvjo"]
@@ -50,18 +50,6 @@ size = Vector2(195, 20)
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lt5o6"]
 size = Vector2(70, 20)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_83txe"]
-size = Vector2(92, 23)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_cyyxq"]
-size = Vector2(57, 74)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_20wsn"]
-size = Vector2(92, 8)
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_kyprj"]
-size = Vector2(8, 10)
 
 [node name="Node2D" type="Node2D"]
 
@@ -123,20 +111,10 @@ value = 5.0
 fill_mode = 2
 texture_progress = ExtResource("5_uulju")
 
-[node name="WorldBorder" type="Area2D" parent="."]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="WorldBorder"]
-position = Vector2(112, 76.5)
-shape = SubResource("RectangleShape2D_83txe")
-
-[node name="CollisionShape2D2" type="CollisionShape2D" parent="WorldBorder"]
-position = Vector2(207.5, 104)
-shape = SubResource("RectangleShape2D_cyyxq")
-
-[node name="CollisionShape2D3" type="CollisionShape2D" parent="WorldBorder"]
-position = Vector2(130, 120)
-shape = SubResource("RectangleShape2D_20wsn")
-
-[node name="CollisionShape2D4" type="CollisionShape2D" parent="WorldBorder"]
-position = Vector2(169, 135)
-shape = SubResource("RectangleShape2D_kyprj")
+[node name="ColorRect" type="ColorRect" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.05099999, 0.05099999, 0.34, 0.5568628)

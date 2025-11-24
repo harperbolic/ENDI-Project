@@ -5,6 +5,7 @@ var is_flipped = false
 func _ready() -> void:
 	Audio.tick.connect(handler)
 	direction = Vector2(-1, 0)
+	$AnimationPlayer.play("default")
 
 func handler():
 	if !is_flipped:

@@ -1,0 +1,61 @@
+[gd_scene load_steps=6 format=3 uid="uid://dtn2vxx6gpggr"]
+
+[ext_resource type="Script" uid="uid://dmubyl4xpr0bn" path="res://Entities/player.gd" id="1_onrkg"]
+[ext_resource type="Texture2D" uid="uid://87rw3kpf2g8b" path="res://assets/player.png" id="2_onrkg"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_i3pqv"]
+size = Vector2(12, 12)
+
+[sub_resource type="Gradient" id="Gradient_onrkg"]
+offsets = PackedFloat32Array(0, 0.68666667, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.04666668, 0.04666668, 0.04666668, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_i3pqv"]
+gradient = SubResource("Gradient_onrkg")
+fill = 1
+fill_from = Vector2(0.5140187, 0.4813084)
+fill_to = Vector2(1, 0.5233645)
+
+[node name="Player" type="CharacterBody2D"]
+script = ExtResource("1_onrkg")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("RectangleShape2D_i3pqv")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_onrkg")
+
+[node name="raycast" type="Node2D" parent="."]
+position = Vector2(0, 8)
+
+[node name="down" type="RayCast2D" parent="raycast"]
+target_position = Vector2(0, 8)
+hit_from_inside = true
+collide_with_areas = true
+
+[node name="right" type="RayCast2D" parent="raycast"]
+position = Vector2(8, -8)
+target_position = Vector2(8, 0)
+hit_from_inside = true
+collide_with_areas = true
+
+[node name="up" type="RayCast2D" parent="raycast"]
+position = Vector2(0, -16)
+target_position = Vector2(0, -8)
+hit_from_inside = true
+collide_with_areas = true
+
+[node name="left" type="RayCast2D" parent="raycast"]
+position = Vector2(-8, -8)
+target_position = Vector2(-8, 0)
+hit_from_inside = true
+collide_with_areas = true
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+z_as_relative = false
+color = Color(0.73, 0.73, 0.73, 1)
+energy = 0.38
+range_z_min = -16
+range_z_max = 16
+texture = SubResource("GradientTexture2D_i3pqv")
+height = 60.0

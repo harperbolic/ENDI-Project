@@ -1,4 +1,4 @@
-[gd_scene load_steps=10 format=3 uid="uid://cx2mt6ra70j0h"]
+[gd_scene load_steps=12 format=3 uid="uid://cx2mt6ra70j0h"]
 
 [ext_resource type="Script" uid="uid://b1hm1a0n5smlo" path="res://scripts/classes/enemy.gd" id="1_7iyf2"]
 [ext_resource type="Texture2D" uid="uid://7hjd3pdyqfat" path="res://assets/Toro/toroIdle00.png" id="2_jutgq"]
@@ -42,6 +42,16 @@ animations = [{
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_3v47s"]
 size = Vector2(13, 13)
 
+[sub_resource type="Gradient" id="Gradient_tsii0"]
+offsets = PackedFloat32Array(0, 0.68666667, 1)
+colors = PackedColorArray(1, 1, 1, 1, 0.04666668, 0.04666668, 0.04666668, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture2D" id="GradientTexture2D_tsii0"]
+gradient = SubResource("Gradient_tsii0")
+fill = 1
+fill_from = Vector2(0.5140187, 0.4813084)
+fill_to = Vector2(1, 0.5046729)
+
 [node name="BasicEnemy" type="Area2D"]
 script = ExtResource("1_7iyf2")
 bullets_direction = Vector2(-1, 0)
@@ -57,3 +67,12 @@ speed_scale = 2.0
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0.5, -0.5)
 shape = SubResource("RectangleShape2D_3v47s")
+
+[node name="PointLight2D" type="PointLight2D" parent="."]
+z_as_relative = false
+color = Color(0.73, 0.68522674, 0.05839999, 1)
+energy = 0.3
+range_z_min = -16
+range_z_max = 16
+texture = SubResource("GradientTexture2D_tsii0")
+height = 60.0
