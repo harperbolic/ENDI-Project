@@ -22,7 +22,7 @@ var room_hard = {
 
 var level = ["testing", "testing", "testing", "testing", "testing"]
 
-@onready var scene = load(scenes["testing"]).instantiate()
+@onready var scene = load(scenes["main_menu"]).instantiate()
 @onready var old_scene = scene
 @onready var current_room = 0
 @onready var max_room = 2
