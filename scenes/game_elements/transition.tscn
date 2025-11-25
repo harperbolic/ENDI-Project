@@ -1,0 +1,116 @@
+[gd_scene load_steps=7 format=3 uid="uid://dss0rxxnsx4fp"]
+
+[ext_resource type="Script" uid="uid://dmmbo13mhg8rt" path="res://scripts/game_element/transition.gd" id="1_m2ij1"]
+[ext_resource type="Texture2D" uid="uid://bt21scat07ifi" path="res://assets/transition.png" id="2_sfqu2"]
+
+[sub_resource type="Animation" id="Animation_puer6"]
+resource_name = "fade_in"
+length = 0.2
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(-160, 0), Vector2(0, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect2:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(320, 0), Vector2(160, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_m2ij1"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(-160, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect2:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Vector2(320, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_sfqu2"]
+resource_name = "fade_out"
+length = 0.6
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("TextureRect:position")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(0, 0), Vector2(-160, 0)]
+}
+tracks/1/type = "value"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("TextureRect2:position")
+tracks/1/interp = 2
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"times": PackedFloat32Array(0.3, 0.6),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Vector2(160, 0), Vector2(320, 0)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_m2ij1"]
+_data = {
+&"RESET": SubResource("Animation_m2ij1"),
+&"fade_in": SubResource("Animation_puer6"),
+&"fade_out": SubResource("Animation_sfqu2")
+}
+
+[node name="Transition" type="CanvasLayer"]
+script = ExtResource("1_m2ij1")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+offset_left = -160.0
+offset_bottom = 180.0
+texture = ExtResource("2_sfqu2")
+
+[node name="TextureRect2" type="TextureRect" parent="."]
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_right = 160.00015
+offset_bottom = 180.0
+grow_horizontal = 0
+texture = ExtResource("2_sfqu2")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_m2ij1")
+}

@@ -1,9 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://dl6irhqvu4gqn"]
+[gd_scene load_steps=4 format=3 uid="uid://dl6irhqvu4gqn"]
 
 [ext_resource type="Script" uid="uid://denh53muimfn7" path="res://scripts/UI/textbox.gd" id="1_47t7x"]
+[ext_resource type="Texture2D" uid="uid://canj8a0t1jtmc" path="res://assets/textbox.png" id="2_47t7x"]
+[ext_resource type="FontFile" uid="uid://x362xiftkw4b" path="res://assets/fonts/Peaberry Font Family/Peaberry Base/Peaberry-Base.otf" id="3_7ql3h"]
 
 [node name="Textbox" type="MarginContainer"]
-offset_right = 560.0
+offset_right = 260.0
 offset_bottom = 75.0
 size_flags_horizontal = 4
 script = ExtResource("1_47t7x")
@@ -11,10 +13,12 @@ script = ExtResource("1_47t7x")
 [node name="NinePatchRect" type="NinePatchRect" parent="."]
 modulate = Color(0, 0, 0, 1)
 layout_mode = 2
-patch_margin_left = 26
-patch_margin_top = 45
-patch_margin_right = 50
-patch_margin_bottom = 29
+texture = ExtResource("2_47t7x")
+region_rect = Rect2(14.076, 13.983, 20, 20)
+patch_margin_left = 18
+patch_margin_top = 18
+patch_margin_right = 17
+patch_margin_bottom = 18
 
 [node name="LetterDisplayTimer" type="Timer" parent="."]
 one_shot = true
@@ -28,12 +32,13 @@ theme_override_constants/margin_bottom = 15
 
 [node name="Label" type="Label" parent="MarginContainer"]
 clip_contents = true
-custom_minimum_size = Vector2(500, 0)
+custom_minimum_size = Vector2(200, 0)
 layout_mode = 2
 size_flags_horizontal = 4
 size_flags_vertical = 1
 theme_override_colors/font_color = Color(1, 1, 1, 1)
-theme_override_font_sizes/font_size = 32
+theme_override_fonts/font = ExtResource("3_7ql3h")
+text = "Ababa"
 autowrap_mode = 2
 visible_characters = 0
 visible_characters_behavior = 1

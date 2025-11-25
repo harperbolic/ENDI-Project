@@ -1,4 +1,4 @@
-[gd_scene load_steps=7 format=3 uid="uid://e4u4x2tuksgl"]
+[gd_scene load_steps=10 format=3 uid="uid://e4u4x2tuksgl"]
 
 [ext_resource type="Script" uid="uid://dya3116563340" path="res://scripts/autoload/AudioManager.gd" id="1_kgib7"]
 [ext_resource type="AudioStream" uid="uid://clw8ysuwgaoij" path="res://_PLACEHOLDER/Audio/Song.mp3" id="2_ed3sa"]
@@ -6,6 +6,9 @@
 [ext_resource type="AudioStream" uid="uid://1tdpb01uyk8y" path="res://assets/sfx/walk.wav" id="4_qevod"]
 [ext_resource type="AudioStream" uid="uid://hng7tgakdea3" path="res://assets/sfx/fail.wav" id="5_rqs6r"]
 [ext_resource type="AudioStream" uid="uid://ca6cvgo0oq7uf" path="res://assets/sfx/leave.wav" id="6_tnqj2"]
+[ext_resource type="AudioStream" uid="uid://b1uueyeuvxk1o" path="res://assets/sfx/transition_in.wav" id="7_403ts"]
+[ext_resource type="AudioStream" uid="uid://ta6pod0dr1x7" path="res://assets/sfx/transition_out.wav" id="8_uxed3"]
+[ext_resource type="AudioStream" uid="uid://bpd217g24d4df" path="res://assets/sfx/yo_scream.wav" id="9_kml6c"]
 
 [node name="AudioManager" type="Node"]
 script = ExtResource("1_kgib7")
@@ -34,4 +37,14 @@ volume_db = 5.0
 
 [node name="leave" type="AudioStreamPlayer" parent="SFX"]
 stream = ExtResource("6_tnqj2")
+volume_db = 9.771
+
+[node name="transition_in" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("7_403ts")
+
+[node name="transition_out" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("8_uxed3")
+
+[node name="scream" type="AudioStreamPlayer" parent="SFX"]
+stream = ExtResource("9_kml6c")
 volume_db = 9.771

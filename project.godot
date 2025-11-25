@@ -17,7 +17,6 @@ config/features=PackedStringArray("4.5", "Forward Plus")
 [autoload]
 
 Scene="*res://scripts/autoload/SceneManager.gd"
-Debug="*res://scripts/autoload/Debug.gd"
 Dialog="*res://scripts/autoload/Dialog.gd"
 Def="*res://scripts/autoload/Definitions.gd"
 Audio="*res://scenes/game_elements/audio_manager.tscn"

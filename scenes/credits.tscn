@@ -1,0 +1,151 @@
+[gd_scene load_steps=5 format=3 uid="uid://1no5vgaojckg"]
+
+[ext_resource type="Script" uid="uid://desclen4yam1h" path="res://scripts/game_element/credits.gd" id="1_2ckv8"]
+[ext_resource type="FontFile" uid="uid://x362xiftkw4b" path="res://assets/fonts/Peaberry Font Family/Peaberry Base/Peaberry-Base.otf" id="2_0ctdu"]
+
+[sub_resource type="Theme" id="Theme_ekxnf"]
+default_font = ExtResource("2_0ctdu")
+
+[sub_resource type="Theme" id="Theme_l6cm7"]
+default_font = ExtResource("2_0ctdu")
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_2ckv8")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/margin_left = 8
+theme_override_constants/margin_top = 8
+theme_override_constants/margin_right = 8
+theme_override_constants/margin_bottom = 8
+
+[node name="HBoxContainer" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 12
+
+[node name="VBoxContainer" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme = SubResource("Theme_ekxnf")
+theme_override_colors/font_color = Color(4.7827163, 0.5640442, 0.5640442, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = -6
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 16
+text = "Harper Moreira"
+horizontal_alignment = 1
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer"]
+custom_minimum_size = Vector2(200, 0)
+layout_mode = 2
+theme = SubResource("Theme_ekxnf")
+theme_override_colors/font_color = Color(0.5181891, 0.5181891, 0.5181891, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 16
+text = "Programação, Game Design e Sound Design"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_ekxnf")
+theme_override_colors/font_color = Color(4.7827163, 0.5640442, 0.5640442, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 16
+text = "Gustavo Ferreira, João Vitor dos Santos e Kenzie Uchida"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme = SubResource("Theme_ekxnf")
+theme_override_colors/font_color = Color(0.5181891, 0.5181891, 0.5181891, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 16
+text = "Sprites e Level Design"
+horizontal_alignment = 1
+
+[node name="VBoxContainer3" type="VBoxContainer" parent="MarginContainer/HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 0
+alignment = 1
+
+[node name="Label" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer3"]
+custom_minimum_size = Vector2(300, 0)
+layout_mode = 2
+size_flags_horizontal = 4
+theme = SubResource("Theme_ekxnf")
+theme_override_colors/font_color = Color(4.7827163, 0.5640442, 0.5640442, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 16
+text = "Vinícius Kenji Sato"
+horizontal_alignment = 1
+autowrap_mode = 2
+
+[node name="Label2" type="Label" parent="MarginContainer/HBoxContainer/VBoxContainer3"]
+layout_mode = 2
+theme = SubResource("Theme_ekxnf")
+theme_override_colors/font_color = Color(0.5181891, 0.5181891, 0.5181891, 1)
+theme_override_colors/font_outline_color = Color(1, 1, 1, 1)
+theme_override_constants/line_spacing = 0
+theme_override_constants/outline_size = 0
+theme_override_font_sizes/font_size = 16
+text = "Level Design"
+horizontal_alignment = 1
+
+[node name="Start" type="Button" parent="."]
+layout_mode = 1
+anchors_preset = 3
+anchor_left = 1.0
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -92.0
+offset_top = -32.0
+offset_right = -8.0
+offset_bottom = -8.0
+grow_horizontal = 0
+grow_vertical = 0
+theme = SubResource("Theme_l6cm7")
+text = "Voltar"
+
+[connection signal="pressed" from="Start" to="." method="_on_start_pressed"]

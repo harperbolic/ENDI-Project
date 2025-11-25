@@ -71,7 +71,7 @@ shape = SubResource("RectangleShape2D_3v47s")
 [node name="PointLight2D" type="PointLight2D" parent="."]
 z_as_relative = false
 color = Color(0.73, 0.68522674, 0.05839999, 1)
-energy = 0.3
+energy = 0.5
 range_z_min = -16
 range_z_max = 16
 texture = SubResource("GradientTexture2D_m0rky")

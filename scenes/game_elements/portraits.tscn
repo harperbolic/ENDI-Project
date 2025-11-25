@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=3 uid="uid://degoo8cxrkwdc"]
+[gd_scene load_steps=4 format=3 uid="uid://degoo8cxrkwdc"]
 
 [ext_resource type="Script" uid="uid://c7n1a3bu88yyw" path="res://scripts/UI/portraits.gd" id="1_fyxdl"]
+[ext_resource type="Texture2D" uid="uid://rm6si0u0gbxy" path="res://assets/PekoPortrait.png" id="2_fyxdl"]
 
 [sub_resource type="AnimationLibrary" id="AnimationLibrary_r1bp4"]
 
@@ -16,20 +17,22 @@ offset_top = -20.0
 offset_right = 1150.0
 offset_bottom = -20.0
 
-[node name="random_none" type="TextureRect" parent="Sprites"]
+[node name="P_none" type="TextureRect" parent="Sprites"]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
 anchor_top = 0.5
 anchor_right = 0.5
 anchor_bottom = 0.5
-offset_right = 2480.001
-offset_bottom = 3508.0
+offset_left = -1146.0
+offset_top = 70.0
+offset_right = -1082.0
+offset_bottom = 198.0
 grow_horizontal = 2
 grow_vertical = 2
-scale = Vector2(0.35, 0.35)
-expand_mode = 3
+texture = ExtResource("2_fyxdl")
 stretch_mode = 4
+flip_h = true
 
 [node name="AnimationPlayer" type="AnimationPlayer" parent="."]
 libraries = {

@@ -58,4 +58,9 @@ func _move(dir: Vector2) -> void:
 func damage() -> void:
 	Def.take_damage()
 	Audio.play_sfx("fail")
-	Scene.reload_room()
+	if Def.lifes > 0:
+		Scene.reload_room()
+	else:
+		Audio.stop_all_music()
+		Audio.play_sfx("spellcast")
+		Scene.load_scene("game_over")

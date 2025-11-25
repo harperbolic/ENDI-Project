@@ -1,8 +1,13 @@
 extends Node
 
-@onready var text_box_scene = preload("res://scenes/game_elements/textbox.tscn")
-@onready var dialog_container = preload("res://scenes/game_elements/dialog_container.tscn")
-@onready var portrait_container = preload("res://scenes/game_elements/portraits.tscn")
+var text_box_scene
+var dialog_container
+var portrait_container
+
+func _ready() -> void:
+	text_box_scene = preload("res://scenes/game_elements/textbox.tscn")
+	dialog_container = preload("res://scenes/game_elements/dialog_container.tscn")
+	portrait_container = preload("res://scenes/game_elements/portraits.tscn")
 
 var dialog_lines : Dictionary = {}
 var current_line_index = 0
@@ -33,7 +38,7 @@ func start_dialog(lines: Dictionary):
 func _show_portraits():
 	portraits = portrait_container.instantiate()
 	get_tree().root.add_child(portraits)
-	portraits.bg_fade_in()
+
 
 func _show_container():
 	container = dialog_container.instantiate()

@@ -1,0 +1,100 @@
+[gd_scene load_steps=6 format=3 uid="uid://uf7066lnw4cv"]
+
+[ext_resource type="Script" uid="uid://c2rmjslk37o33" path="res://scripts/game_element/game_over.gd" id="1_tbwuq"]
+[ext_resource type="FontFile" uid="uid://x362xiftkw4b" path="res://assets/fonts/Peaberry Font Family/Peaberry Base/Peaberry-Base.otf" id="2_tbwuq"]
+[ext_resource type="Texture2D" uid="uid://codsgq4xu318h" path="res://assets/game_over_screen.png" id="3_tbwuq"]
+
+[sub_resource type="Theme" id="Theme_l6cm7"]
+default_font = ExtResource("2_tbwuq")
+
+[sub_resource type="Theme" id="Theme_tbwuq"]
+default_font = ExtResource("2_tbwuq")
+
+[node name="MainMenu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_tbwuq")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0, 0, 0, 1)
+
+[node name="MarginContainer" type="MarginContainer" parent="."]
+layout_mode = 1
+anchors_preset = 6
+anchor_left = 1.0
+anchor_top = 0.5
+anchor_right = 1.0
+anchor_bottom = 0.5
+offset_left = -146.0
+offset_top = -31.0
+offset_bottom = 31.0
+grow_horizontal = 0
+grow_vertical = 2
+theme_override_constants/margin_top = 10
+theme_override_constants/margin_right = 10
+
+[node name="Menu Buttons" type="VBoxContainer" parent="MarginContainer"]
+layout_mode = 2
+theme_override_constants/separation = 4
+
+[node name="Start" type="Button" parent="MarginContainer/Menu Buttons"]
+layout_mode = 2
+theme = SubResource("Theme_l6cm7")
+text = "Recomeçar"
+
+[node name="Exit" type="Button" parent="MarginContainer/Menu Buttons"]
+layout_mode = 2
+theme = SubResource("Theme_l6cm7")
+text = "Menu Principal"
+
+[node name="Title" type="Control" parent="."]
+anchors_preset = 0
+offset_left = 23.0
+offset_top = 28.0
+offset_right = 202.0
+offset_bottom = 109.0
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Title"]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.5
+offset_top = -37.0
+offset_right = 84.5
+offset_bottom = 37.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 0
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_left = 57.0
+offset_top = 33.0
+offset_right = 159.0
+offset_bottom = 169.0
+texture = ExtResource("3_tbwuq")
+
+[node name="Label" type="Label" parent="TextureRect"]
+layout_mode = 0
+offset_left = -28.0
+offset_top = -17.0
+offset_right = 132.0
+offset_bottom = 6.0
+theme = SubResource("Theme_tbwuq")
+text = "Peko-chan morreu!"
+
+[connection signal="pressed" from="MarginContainer/Menu Buttons/Start" to="." method="_on_start_pressed"]
+[connection signal="pressed" from="MarginContainer/Menu Buttons/Exit" to="." method="_on_exit_pressed"]
