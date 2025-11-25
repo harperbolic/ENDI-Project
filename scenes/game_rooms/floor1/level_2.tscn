@@ -1,4 +1,4 @@
-[gd_scene load_steps=22 format=4 uid="uid://d2ax436rvlsx1"]
+[gd_scene load_steps=27 format=4 uid="uid://d2ax436rvlsx1"]
 
 [ext_resource type="Texture2D" uid="uid://d1h7a0whm2qj7" path="res://assets/tileset/sheetpekochan.png" id="1_vp1yu"]
 [ext_resource type="PackedScene" uid="uid://uqhksvy6d84m" path="res://scenes/game_elements/Exit.tscn" id="2_oatij"]
@@ -73,6 +73,21 @@ size = Vector2(195, 20)
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_lt5o6"]
 size = Vector2(70, 20)
 
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_6c6na"]
+size = Vector2(87, 24)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_es5iv"]
+size = Vector2(137, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ewqsv"]
+size = Vector2(76, 9)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_7kehb"]
+size = Vector2(58, 11)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g2q1y"]
+size = Vector2(20, 24)
+
 [node name="Node2D" type="Node"]
 
 [node name="Tileset" type="Node2D" parent="."]
@@ -122,5 +137,27 @@ position = Vector2(213, 15)
 shape = SubResource("RectangleShape2D_lt5o6")
 
 [node name="UI" parent="." instance=ExtResource("14_mxl0s")]
+
+[node name="Area2D" type="Area2D" parent="."]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(112.5, 79)
+shape = SubResource("RectangleShape2D_6c6na")
+
+[node name="CollisionShape2D2" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(150.5, 119.5)
+shape = SubResource("RectangleShape2D_es5iv")
+
+[node name="CollisionShape2D3" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(201, 135.5)
+shape = SubResource("RectangleShape2D_ewqsv")
+
+[node name="CollisionShape2D4" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(207, 71.5)
+shape = SubResource("RectangleShape2D_7kehb")
+
+[node name="CollisionShape2D5" type="CollisionShape2D" parent="Area2D"]
+position = Vector2(190, 95)
+shape = SubResource("RectangleShape2D_g2q1y")
 
 [connection signal="area_entered" from="Tileset/Details/Area2D" to="Tileset/Details/Area2D" method="_on_area_entered"]
