@@ -6,6 +6,8 @@ func _on_start_pressed() -> void:
 	#Scene.load_next_room()
 	Scene.current_room = 0
 	Scene.load_next_room()
+	Audio.stop_all_music()
+	Audio.play_music("level_theme", 150)
 
 
 func _ready() -> void:

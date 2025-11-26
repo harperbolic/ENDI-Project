@@ -1,7 +1,7 @@
 [gd_scene load_steps=10 format=3 uid="uid://e4u4x2tuksgl"]
 
 [ext_resource type="Script" uid="uid://dya3116563340" path="res://scripts/autoload/AudioManager.gd" id="1_kgib7"]
-[ext_resource type="AudioStream" uid="uid://clw8ysuwgaoij" path="res://_PLACEHOLDER/Audio/Song.mp3" id="2_ed3sa"]
+[ext_resource type="AudioStream" uid="uid://5viob3b5k5tv" path="res://assets/music/MainMenu.mp3" id="2_403ts"]
 [ext_resource type="AudioStream" uid="uid://clxjwocs8eabw" path="res://assets/sfx/spellcast.wav" id="3_c3o4n"]
 [ext_resource type="AudioStream" uid="uid://1tdpb01uyk8y" path="res://assets/sfx/walk.wav" id="4_qevod"]
 [ext_resource type="AudioStream" uid="uid://hng7tgakdea3" path="res://assets/sfx/fail.wav" id="5_rqs6r"]
@@ -16,8 +16,13 @@ script = ExtResource("1_kgib7")
 [node name="Music" type="Node" parent="."]
 unique_name_in_owner = true
 
-[node name="metronome" type="AudioStreamPlayer" parent="Music"]
-stream = ExtResource("2_ed3sa")
+[node name="main_menu" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("2_403ts")
+volume_db = 10.0
+
+[node name="level_theme" type="AudioStreamPlayer" parent="Music"]
+stream = ExtResource("2_403ts")
+volume_db = 10.0
 
 [node name="SFX" type="Node" parent="."]
 unique_name_in_owner = true

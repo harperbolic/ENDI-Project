@@ -6,8 +6,6 @@
 [node name="UI" type="Control"]
 layout_mode = 3
 anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
 script = ExtResource("1_6o5m5")
 
 [node name="TextureProgressBar" type="TextureProgressBar" parent="."]

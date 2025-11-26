@@ -1,14 +1,14 @@
-[gd_scene load_steps=6 format=3 uid="uid://uf7066lnw4cv"]
+[gd_scene load_steps=6 format=3 uid="uid://q0py2xdvgj8i"]
 
-[ext_resource type="Script" uid="uid://c2rmjslk37o33" path="res://scripts/game_element/game_over.gd" id="1_tbwuq"]
-[ext_resource type="FontFile" uid="uid://x362xiftkw4b" path="res://assets/fonts/Peaberry Font Family/Peaberry Base/Peaberry-Base.otf" id="2_tbwuq"]
-[ext_resource type="Texture2D" uid="uid://codsgq4xu318h" path="res://assets/game_over_screen.png" id="3_tbwuq"]
+[ext_resource type="Script" uid="uid://c2rmjslk37o33" path="res://scripts/game_element/game_over.gd" id="1_l1273"]
+[ext_resource type="FontFile" uid="uid://x362xiftkw4b" path="res://assets/fonts/Peaberry Font Family/Peaberry Base/Peaberry-Base.otf" id="2_7ej5r"]
+[ext_resource type="Texture2D" uid="uid://rm6si0u0gbxy" path="res://assets/PekoPortrait.png" id="3_l1273"]
 
 [sub_resource type="Theme" id="Theme_l6cm7"]
-default_font = ExtResource("2_tbwuq")
+default_font = ExtResource("2_7ej5r")
 
 [sub_resource type="Theme" id="Theme_tbwuq"]
-default_font = ExtResource("2_tbwuq")
+default_font = ExtResource("2_7ej5r")
 
 [node name="MainMenu" type="Control"]
 layout_mode = 3
@@ -17,7 +17,7 @@ anchor_right = 1.0
 anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
-script = ExtResource("1_tbwuq")
+script = ExtResource("1_l1273")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1
@@ -36,8 +36,8 @@ anchor_top = 0.5
 anchor_right = 1.0
 anchor_bottom = 0.5
 offset_left = -146.0
-offset_top = -31.0
-offset_bottom = 31.0
+offset_top = -17.0
+offset_bottom = 45.0
 grow_horizontal = 0
 grow_vertical = 2
 theme_override_constants/margin_top = 10
@@ -76,19 +76,22 @@ theme_override_constants/separation = 0
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_left = 49.0
-offset_top = 33.0
-offset_right = 151.0
-offset_bottom = 169.0
-texture = ExtResource("3_tbwuq")
+offset_left = 53.0
+offset_top = 36.0
+offset_right = 155.0
+offset_bottom = 172.0
+texture = ExtResource("3_l1273")
+stretch_mode = 4
+flip_h = true
 
 [node name="Label" type="Label" parent="TextureRect"]
 layout_mode = 0
-offset_left = -28.0
-offset_top = -17.0
-offset_right = 132.0
+offset_left = -31.0
+offset_top = -29.0
+offset_right = 249.0
 offset_bottom = 6.0
 theme = SubResource("Theme_tbwuq")
-text = "Peko-chan morreu!"
+text = "Parabéns, você provou seu valor
+no Yokai Showdown!"
 
 [connection signal="pressed" from="MarginContainer/Menu Buttons/Exit" to="." method="_on_exit_pressed"]

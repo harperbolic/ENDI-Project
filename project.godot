@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Bullet Dancers"
+config/name="Yokai Showdown"
 run/main_scene="uid://bbevkcvj6gmb6"
 config/features=PackedStringArray("4.5", "Forward Plus")
 

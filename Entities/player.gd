@@ -61,6 +61,4 @@ func damage() -> void:
 	if Def.lifes > 0:
 		Scene.reload_room()
 	else:
-		Audio.stop_all_music()
-		Audio.play_sfx("spellcast")
 		Scene.load_scene("game_over")
