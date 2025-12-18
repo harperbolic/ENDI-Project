@@ -59,4 +59,4 @@ func _process(_delta: float) -> void:
 		past_time = time
 
 func _ready() -> void:
-	Audio.play_music("main_menu", 126)
+	Audio.play_music("main_menu", 128)
